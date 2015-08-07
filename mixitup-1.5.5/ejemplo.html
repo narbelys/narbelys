@@ -1,0 +1,330 @@
+<html lang="en"><head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=320, initial-scale=1, maximum-scale=1, user-scalable=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+
+		<!--[if lt IE 9]>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+			<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+		<![endif]-->
+		
+		<script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script><script async="" src="//ajax.cloudflare.com/cdn-cgi/nexp/dok8v=221574e73d/cloudflare.min.js"></script><script type="text/javascript">
+//<![CDATA[
+try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",bag2:1,mirage2:0,oracle:0,paths:{cloudflare:"/cdn-cgi/nexp/dok8v=02fcfa4f56/"},atok:"0849dd1e06d76a342c8ed4d7b974c6cc",petok:"4f6e1af7fef337dd919f90dd9dc64ed3f278b1a7-1393363498-1800",zone:"mixitup.io",rocket:"0",apps:{"ga_key":{"ua":"UA-714221-40","ga_bs":"2"}}}];CloudFlare.push({"apps":{"ape":"cf07888fb356443a429b130bd671e1d0"}});var a=document.createElement("script"),b=document.getElementsByTagName("script")[0];a.async=!0;a.src="//ajax.cloudflare.com/cdn-cgi/nexp/dok8v=221574e73d/cloudflare.min.js";b.parentNode.insertBefore(a,b);}}catch(e){};
+//]]>
+</script>
+<link href="http://fonts.googleapis.com/css?family=Quicksand|Open+Sans:300,600,700" rel="stylesheet" type="text/css">
+		
+		<link rel="stylesheet" type="text/css" href="cards.css">
+		<link rel="shortcut icon" type="image/x-icon" href="im/favicon.ico">
+		
+		<script type="text/javascript" src="jquery-1.9.1.min.js"></script><style type="text/css">.cf-hidden { display: none; } .cf-invisible { visibility: hidden; }</style>
+		<script type="text/javascript" src="jquery-ui.sortable.min.js"></script>
+		<script type="text/javascript" src="jquery.ui.touch-punch.min.js"></script>
+		<script type="text/javascript" src="jquery.mixitup.min.js"></script>
+		
+		<!--
+
+		MMMMMMMM   MMMMMMMM   MMMMMMMM    
+		MMMMMMMM   MMMMMMMM   MMMMMMMM    
+		MMMMMMMM   MMMMMMMM   MMMMMMMM    
+		MMMMMMMM   MMMMMMMM   MMMMMMMM    
+		
+		MMMMMMMM   MMMMMMMM   MMMMMMMM    
+		MMMMMMMM   MMMMMMMM   MMMMMMMM    
+		MMMMMMMM   MMMMMMMM   MMMMMMMM    
+		MMMMMMMM   MMMMMMMM   MMMMMMMM    
+		
+		MMMMMMMM   MMMMMMMM   MMMMMMMM    
+		MMMMMMMM   MMMMMMMM   MMMMMMMM    
+		MMMMMMMM   MMMMMMMM   MMMMMMMM    
+		MMMMMMMM   MMMMMMMM   MMMMMMMM     
+
+		PLAYING CARDS: A MIXITUP DEMO
+		
+		Concept and development by Patrick Kunka
+		Design and illustrations by Jane Song
+		
+		MixItUp is free for non-commercial and commercial use.
+		Copyright 2013 Barrel LLC.
+		
+		http://mixitup.io
+		http://www.barrelny.com
+		
+		DEMO FEATURES
+		
+		* Filter by suit
+		* Toggle multiple filters
+		* Sort by rank
+		* Random shuffle
+		* jQuery UI Sortable integration
+		* Multiple fluid layouts via media-queries
+		
+		We hope you find this demo useful and educational,
+		Enjoy!
+		
+		The MixItUp Team
+		
+		-->
+		
+		<script type="text/javascript">
+		
+			/* 
+			*	We would normally recommend that all JavaScript is kept in a seperate .js file,
+			* 	but we have included it in the document head for convenience.
+			*/
+			
+			// INSTANTIATE MIXITUP ON THE DECK
+		
+			$(function(){
+				
+				$('#Deck').mixitup({
+					
+					// LET'S USE A SIMPLE FADE FOR THIS DEMO
+					
+					effects: ['fade'],
+					
+					// ALLOW TOGGLING
+					
+					multiFilter: true,
+					
+					// AS WE ARE USING TOGGLING, IT IS NECCESSARY TO LIST ALL INDIVIDUAL CATEGORIES ON LOAD
+					
+					showOnLoad: 'hearts diamonds spades clubs',
+					
+					// AFTER EACH MIX:
+					
+					onMixEnd: function(){
+						
+						// RE-INSTANTIATE UI-SORTABLE ON DECK, AS CLICK HANDLERS MAY BE DESTROYED DURING MIX
+						
+						$('#Deck').sortable('destroy');
+						sortable();
+					}
+				});
+				
+				// LET'S GIVE OUR DECK DRAG AND DROP FUNCTIONALITY VIA JQUERY UI SORTABLE
+				
+				function sortable(){
+					
+					$('#Deck').sortable({
+						
+						// ENABLE PLACEHOLDERS TO MAINTAIN SPACING
+						
+						placeholder: 'placeholder',
+						
+						// APPLY ONLY TO CARDS (NOT GAPS)
+						
+						items: '.mix',
+						
+						// ANIMATE CARDS TO NEW POSITION
+						
+						revert: 150,
+						
+						change: function(event, ui){
+							
+							// MAINTAIN WHITESPACE BETWEEN INLINE-BLOCKS
+							
+							ui.placeholder.before('\n').after('\n');
+							
+							// IF THE ORDER HAS CHANGED, DEACTIVATE ANY ACTIVE SORT BUTTONS
+							
+							$('#PlayingCards').find('.sort').removeClass('active');
+						},
+						stop: function(event, ui) {
+							
+							// MAINTAIN WHITESPACE BETWEEN INLINE-BLOCKS
+							
+							ui.item.before('\n').after('\n');
+						}
+					});
+				
+				};
+				
+				sortable();
+				
+			});
+		</script>
+		
+		<title>Playing Cards - A MixItUp Demo</title>
+	<script type="text/javascript">
+/* <![CDATA[ */
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-714221-40']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+(function(b){(function(a){"__CF"in b&&"DJS"in b.__CF?b.__CF.DJS.push(a):"addEventListener"in b?b.addEventListener("load",a,!1):b.attachEvent("onload",a)})(function(){"FB"in b&&"Event"in FB&&"subscribe"in FB.Event&&(FB.Event.subscribe("edge.create",function(a){_gaq.push(["_trackSocial","facebook","like",a])}),FB.Event.subscribe("edge.remove",function(a){_gaq.push(["_trackSocial","facebook","unlike",a])}),FB.Event.subscribe("message.send",function(a){_gaq.push(["_trackSocial","facebook","send",a])}));"twttr"in b&&"events"in twttr&&"bind"in twttr.events&&twttr.events.bind("tweet",function(a){if(a){var b;if(a.target&&a.target.nodeName=="IFRAME")a:{if(a=a.target.src){a=a.split("#")[0].match(/[^?=&]+=([^&]*)?/g);b=0;for(var c;c=a[b];++b)if(c.indexOf("url")===0){b=unescape(c.split("=")[1]);break a}}b=void 0}_gaq.push(["_trackSocial","twitter","tweet",b])}})})})(window);
+/* ]]> */
+</script>
+</head>
+	<body id="PlayingCards">
+	<section>
+		
+		<!-- BEGIN HEADER -->
+		
+		<header class="ns">
+			<div class="wrapper just wf">
+				<a class="ib" href="http://mixitup.io">
+					<div id="Logo" class="ib">
+						<ul class="ib anim150 just">
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
+					</div>
+					<h1 class="ib"><strong>Playing Cards</strong>: A MixItUp Demo</h1>
+				</a>
+				<!--<a href="#">
+					<div class="ib anim150 button">Download Demo</div>
+				</a>-->
+			</div>
+		</header>
+		
+		<!-- END HEADER -->
+		
+		<!-- BEGIN DEMO WRAPPER -->
+		
+		<div class="wrapper wf">
+			
+			<!-- BEGIN CONTROLS -->
+			
+			<nav>
+				
+				<!-- FILTER CONTROLS -->
+				
+				<ul>
+					<li class="filter active" data-filter="hearts"><span></span></li>
+					<li class="filter active" data-filter="clubs"><span></span></li>
+					<li class="filter active" data-filter="diamonds"><span></span></li>
+					<li class="filter active" data-filter="spades"><span></span></li>
+				</ul>
+				
+				<!-- SORT CONTROLS -->
+					
+				<ul>
+					<li class="random sort" data-sort="random"><span></span></li>
+					<li class="sort" data-sort="data-rank" data-order="desc"><span></span></li>
+					<li class="sort" data-sort="data-rank" data-order="asc"><span></span></li>
+				</ul>
+			</nav>
+			
+			<!-- END CONTROLS -->
+			
+			<!-- BEGIN DECK -->
+			
+			<!--
+			*	Each card  in the deck has the targetSelector class 'mix' so MixItUp knows 
+			*	to include only these and not the 'gap' elements below.
+			*	The suit of each card is also entered as a class.
+			*	The rank of each card is entered numerically in the data-rank attribute. 
+			*	Aces, jacks, queens and kings get the ranks 0, 11, 12, and 13 respectively.
+			-->
+			
+			<ul id="Deck" class="just ui-sortable" style="    ">
+				<li class="mix clubs mix_all" data-rank="0" style=" display: inline-block; opacity: 1;">
+					<s></s>
+				</li>
+				<li class="mix hearts mix_all" data-rank="2" style=" display: inline-block; opacity: 1;">
+					<s></s><s></s>
+				</li>
+				<li class="mix diamonds mix_all" data-rank="5" style=" display: inline-block; opacity: 1;">
+					<s></s><s></s><s></s><s></s><s></s>
+				</li>
+				<li class="mix spades mix_all" data-rank="3" style=" display: inline-block; opacity: 1;">
+					<s></s><s></s><s></s>
+				</li>
+				<li class="mix clubs mix_all" data-rank="12" style=" display: inline-block; opacity: 1;">
+					<s></s>
+				</li>
+				<li class="mix spades mix_all" data-rank="13" style=" display: inline-block; opacity: 1;">
+					<s></s>
+				</li>
+				<li class="mix clubs mix_all" data-rank="7" style=" display: inline-block; opacity: 1;">
+					<s></s><s></s><s></s><s></s><s></s><s></s><s></s>
+				</li>
+				<li class="mix hearts mix_all" data-rank="6" style=" display: inline-block; opacity: 1;">
+					<s></s><s></s><s></s><s></s><s></s><s></s>
+				</li>
+				<li class="mix diamonds mix_all" data-rank="12" style=" display: inline-block; opacity: 1;">
+					<s></s>
+				</li>
+				<li class="mix spades mix_all" data-rank="9" style=" display: inline-block; opacity: 1;">
+					<s></s><s></s><s></s><s></s><s></s><s></s><s></s><s></s><s></s>
+				</li>
+				<li class="mix clubs mix_all" data-rank="13" style=" display: inline-block; opacity: 1;">
+					<s></s>
+				</li>
+				<li class="mix spades mix_all" data-rank="4" style=" display: inline-block; opacity: 1;">
+					<s></s><s></s><s></s><s></s>
+				</li>
+				<li class="mix clubs mix_all" data-rank="10" style=" display: inline-block; opacity: 1;">
+					<s></s><s></s><s></s><s></s><s></s><s></s><s></s><s></s><s></s><s></s>
+				</li>
+				<li class="mix spades mix_all" data-rank="2" style=" display: inline-block; opacity: 1;">
+					<s></s><s></s>
+				</li>
+				<li class="mix clubs mix_all" data-rank="8" style=" display: inline-block; opacity: 1;">
+					<s></s><s></s><s></s><s></s><s></s><s></s><s></s><s></s>
+				</li>
+				<li class="mix hearts mix_all" data-rank="11" style=" display: inline-block; opacity: 1;">
+					<s></s>
+				</li>
+				<li class="mix diamonds mix_all" data-rank="0" style=" display: inline-block; opacity: 1;">
+					<s></s>
+				</li>
+				<li class="mix clubs mix_all" data-rank="6" style=" display: inline-block; opacity: 1;">
+					<s></s><s></s><s></s><s></s><s></s><s></s>
+				</li>
+				
+				<!-- IMPORTANT: 'GAPS' FILL OUT THE EMPTY SPACES ON A FLUID JUSTIFIED GRID -->
+				
+				<li class="gap"></li>
+				<li class="gap"></li>
+				<li class="gap"></li>
+				<li class="gap"></li>
+				<li class="gap"></li>
+			</ul>
+			
+			<!-- END DECK -->
+			
+		</div>
+		
+		<!-- END DEMO WRAPPER -->
+		
+		</section>
+		
+		<!-- BEGIN FOOTER -->
+		
+		<footer>
+				<div class="left">
+					<a class="ib" href="http://www.barrelny.com" target="_blank"><img src="im/logo_black.svg"></a>
+				</div>
+				<div class="right">
+					<p><strong>MixItUp</strong> is a <a href="#">Barrel Tool</a><br>Concept and development by Patrick Kunka</p>
+					<p class="small">© Copyright 2013 Barrel LLC. All rights reserved.</p>
+				</div>
+			<div class="clear"></div>
+		</footer>
+		
+		<script>/* CloudFlare analytics upgrade */
+</script>
+		
+		<!-- END FOOTER -->
+		
+	
+</body></html>
+
+
+

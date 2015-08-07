@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery UI Draggable - Default functionality</title>
+  	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/style2.css">
+	<link rel="stylesheet" href="css/style.css">
+	
+	<link rel="stylesheet" href="css/prettyPhoto.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+	<link href="fonts/font-awesome-4.0.3/css/font-awesome.css" rel="stylesheet">
+	
+	
+	
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  
+  
+  
+	
+<!--  	<script type="text/javascript" src="mixitup-1.5.5/jquery-1.9.1.min.js"></script> -->
+<!-- 	<script type="text/javascript" src="mixitup-1.5.5/jquery-ui.sortable.min.js"></script>-->
+ 	<script type="text/javascript" src="mixitup-1.5.5/jquery.ui.touch-punch.min.js"></script>
+ 	<script type="text/javascript" src="mixitup-1.5.5/jquery.mixitup.min.js"></script>
+ 	
+ 	
+  <script src="js/bootstrap.js"></script>
+  
+  <style>
+  #draggable { width: 150px; height: 150px; padding: 0.5em; }
+  </style>
+  <script>
+  $(function() {
+
+					
+					
+    				$('body').scrollspy({ target: '#my-nav' });
+					
+					
+					
+					$('[data-spy="scroll"]').each(function () {
+						var $spy = $(this).scrollspy('refresh')
+					});
+					
+					
+					$('#homeM').click(function(){ //Id del elemento cliqueable
+						
+						$('.active').removeClass( "active" )
+						$(this).addClass( "active" );
+    					$('html, body').animate({scrollTop:$("#home").offset().top
+                   }, 'slow');
+    					return false;
+    				});
+					
+    				$('#aboutM').click(function(){ //Id del elemento cliqueable
+						$('.active').removeClass( "active" )
+						$(this).addClass( "active" );
+    					$('html, body').animate({scrollTop:$("#about").offset().top
+                   }, 'slow');
+    					return false;
+    				});
+					
+					$( "#draggable" ).draggable();
+					
+					$('#servicesM').click(function(){ //Id del elemento cliqueable
+ 						$('.active').removeClass( "active" )
+						$(this).addClass( "active" );   					
+    					$('html, body').animate({scrollTop:$("#services").offset().top
+                   }, 'slow');
+    					return false;
+    				});
+					
+
+					$('#portfolioM').click(function(){ //Id del elemento cliqueable
+   						$('.active').removeClass( "active" )
+						$(this).addClass( "active" ); 					
+    					$('html, body').animate({scrollTop:$("#portfolio").offset().top
+                   }, 'slow');
+    					return false;
+    				});
+					$('#skillsM').click(function(){ //Id del elemento cliqueable
+    					$('.active').removeClass( "active" )
+						$(this).addClass( "active" );					
+    					$('html, body').animate({scrollTop:$("#skills").offset().top
+                   }, 'slow');
+    					return false;
+    				});
+					
+					$('#contactM').click(function(){ //Id del elemento cliqueable
+						$('.active').removeClass( "active" )
+						$(this).addClass( "active" );					
+						$('html, body').animate({scrollTop:$("#contact").offset().top
+                   }, 'slow');
+    					return false;
+    				});
+					
+					
+  });
+  </script>
+</head>
+<body data-spy="scroll" data-target="#my-nav" id="cbp-so-scroller" style="" data-twttr-rendered="true">
+ 
+<div id="draggable" class="ui-widget-content">
+  <p>Drag me around</p>
+</div>
+ 
+ 	<div id="home"></div>
+	<!-- Navigation Bar -->
+	<div class="navbar navbar-fixed-top" >
+		<div class="container">
+
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#"><b class="logo" style="color:">Narbelys</b> <p>Front End</p></a>
+				
+			</div>
+
+			<nav class="cl-effect-13" id="cl-effect-13" >
+				<ul class="nav navbar-nav" >
+					<li class="active" id="homeM"  ><a href="#home" >Home</a></li>
+					<li class="" id="aboutM" ><a href="">About Me</a></li>
+					<li class="" id="servicesM" ><a href="#services">Skills</a></li>
+					<li class=""  id="portfolioM" ><a href="#portfolio">My Work</a></li>
+					<!--<li class="" id="skillsM" ><a href="#skills">Skills</a></li>-->
+					<li class="" id="contactM" ><a href="#contact">Contact</a></li>
+				</ul>
+			</nav>
+
+		</div>
+	</div>
+	<!-- End of Navigation Bar -->
+
+
+	<!-- Jumbotron -->
+	<section class="jumbotron"  style="background-color:#7CC24F; background-image:url('img/Narbe.png'); background-repeat:no-repeat;  background-size:768px 576px; ">
+		<div class="container" style="padding-bottom:50px">
+			<div class="row">
+				<div class="col-md-8">
+					<div class="main-photo" id="header-photo" style="opacity: 1; margin-top: 0px;">
+						
+					</div>
+					<a id="prueba" >AQUIII</a>
+					<h1 style="opacity: 1; padding-top: 0px;">Hello, I am Narbelys Oropeza</h1>
+					<p></p>
+					<h2 style="opacity: 1;">
+					Developer & Webdesign
+					</h2>
+	<!--			<div class="right-col flexslider home-slider" style="z-index:1;">		
+					<div class="flex-viewport" style="overflow: hidden; position: relative; height: 130px;"><ul class="slides" style="height: 1000%; position: absolute; width: 100%; -webkit-transition: 0.5s; -webkit-transform: translate3d(0, -390px, 0);"><li class="clone" aria-hidden="true" style="display: block;"><p>Expert</p></li>
+						
+							<li style="display: block;" class=""><p>Designer</p></li>
+							
+							<li style="display: block;" class=""><p>Developer</p></li>
+							
+							<li style="display: block;" class="flex-active-slide"><p>Expert</p></li>
+							
+							<li style="display: block;" class="clone" aria-hidden="true"><p>Designer</p></li></ul>
+					</div>
+					</div>-->
+				
+					<div class="row" style="padding-top:50px; padding-bottom:50px">
+						<a href="https://www.facebook.com/NcorNarbe" target="blank">
+							<div class="col-sm-1 col-sm-offset-3 social-icons" title="Facebook">
+								<i class="fa fa-facebook fa-lg"></i>
+							</div>
+						</a>
+						<a href="http://twitter.com/ncor_narbe" target="blank" >
+							<div class="col-sm-1 social-icons" style="" title="Twitter">
+								<i class="fa fa-twitter fa-lg"></i>
+							</div>
+						</a>
+						
+						<a href="https://plus.google.com/u/0/+narbeoropeza" target="blank" >
+							<div class="col-sm-1 social-icons" title="Google-plus">
+								<i class="fa fa-google-plus fa-lg"></i>
+							</div>
+						</a>
+						
+						<a href="http://www.linkedin.com/pub/narbelys-oropeza/2a/246/87b" target="blank">
+							<div class="col-sm-1 social-icons" title="Linkedin">
+								<i class="fa fa-linkedin fa-lg"></i>
+							</div>
+						</a>
+						
+						<a href="http://instagram.com/narbelys" target="blank">
+						<div class="col-sm-1 social-icons" title="Instagram">
+							<i class="fa fa-instagram fa-lg"></i>
+						</div>
+						</a>
+						<div class="col-sm-1 social-icons" title="Skype: narbelys">
+							<i class="fa fa-skype fa-lg"></i>
+						</div>
+						<a href="http://kr.pinterest.com/narbelys/pins/" target="blank">
+							<div class="col-sm-1 social-icons" title="Pinterest">
+								<i class="fa fa-pinterest fa-lg"></i>
+							</div>
+						</a>
+					</div>
+				
+					<p style="opacity: 1;" ><a class="btn btn-outline-white btn-big" href="#contact">Contact Me</a></p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End of Jumbotron -->
+
+
+	<!-- About Section -->
+	<section id="about" class="cbp-so-section cbp-so-init">
+		<div class="container">
+
+			<h1>Who Am I</h1>
+
+			<div class="row">
+				<div class="col-sm-4">
+					<figure class="round-outline">
+						<a href="img/narbeReal.jpg" class="round-photo-anchor" rel="prettyPhoto[about-gal]">
+							<img class=" img-responsive img-circle" src="img/narbeReal3.jpg" alt="">
+							<!-- <div class="round-caption-bg"> <img class=" img-responsive img-circle" src="img/narbe9.jpg" alt=""> </div> -->
+						</a>
+					</figure>
+				</div>
+				<div class="col-sm-8" style="padding-top:40px; text-align: left;">
+					<h2>B. Sc. in Computer Science from Universidad Simón Bolívar</h2>
+					<h2>I'm a user interface designer & web developer living in Venezuela. I have work with PRX control solutions as font end specialist.
+					</h2>
+					<h2>I'm fluent with html, css, jQuery, bootstrap and continue to learn Angularjs. Also I use this beautiful weapon called Photoshop.<h2>
+					<h2>It is not just a job for me, it's a passion.<h2>
+				</div>
+
+			</div>
+
+
+		</div>
+	</section>
+	<!-- End of About Section -->
+
+
+	<!-- Services Section -->
+	<section id="services" class="cbp-so-section cbp-so-init">
+		<div class="container">
+			<h1>What I do Exactly</h1>
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<p>
+					I create awesome Websites and Apps, the perfect solution for your project.
+					Built with modern technologies like: 
+					</p>
+
+					
+				</div>
+				<div class="col-md-3 service-column">
+					<figure class="service-icon">
+						<i class="fa fa-magic"></i>
+					</figure>
+					<h2><a href="#">Design</a></h2>
+					<p class="service-description">
+					Photoshop
+					</br>
+					</br>
+					</br>
+					</br>
+					</br>
+					</p>
+				
+				</div>
+				<div class="col-md-3 service-column">
+					<figure class="service-icon">
+						<i class="fa fa-desktop"></i>
+					</figure>
+					<h2><a href="#">Front-End</a></h2>
+					<p class="service-description">
+					HTML5</br>
+					CSS3</br>
+					Bootstrap 3</br>
+					Angularjs</br>
+					Jquery
+					</p>
+				</div>
+				<div class="col-md-3 service-column">
+					<figure class="service-icon">
+						<i class="fa fa-code"></i>
+					</figure>
+					<h2><a href="#">Logic</a></h2>
+					<p class="service-description">
+					Django</br>
+					PHP
+					</br>
+					</br>
+					</br>
+					</br>
+					</p>
+				</div>
+				<div class="col-md-3 service-column">
+					<figure class="service-icon">
+						<i class="fa fa-table"></i>
+					</figure>
+					<h2><a href="#">Database</a></h2>
+					<p class="service-description">
+					MYSQL</br>
+					PostgreSQL
+					</br>
+					</br>
+					</br>
+					</br>
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End of Services Section -->
+
+ 
+
+
+	<!-- Portfolio Section -->
+	<section id="portfolio" >
+		<div class="container cbp-so-side cbp-so-side-top">
+			<h1>My latest work</h1>
+			
+				
+				<div class="row-fluid nav-filtro">
+					<a class="filter active" data-filter="hearts" style="margin-left:20%">All</a>
+					<a class="filter active" data-filter="clubs">Web</a>
+					<a class="filter active" data-filter="diamonds">Apps</a>
+					<a class="filter active" data-filter="spades" style="margin-right:20%">Graphics</a>
+					
+				</div>
+
+
+			
+			<ul id="Deck" class="just ui-sortable" style="    ">
+<!--								<div data-filter="graphics" style="background-image:url('img/imagen2.jpg');"></div>
+					<div data-filter="web" style=" background-image:url('img/admin/imagen1.png');"></div>
+					<div data-filter="graphics" style="background-image:url('img/imagen4.jpg');"></div>
+					<div data-filter="web" style=" background-image:url('img/cliente/imagen1.png');"></div>
+					<div data-filter="apps" style="background-image:url('img/imagen3.png');"></div>
+					<div data-filter="graphics" style="background-image:url('img/foto1.jpg');"></div>
+					<div data-filter="web" style=" background-image:url('img/prestador/imagen1.png');"></div>
+					<div data-filter="graphics" style="background-image:url('img/logo_prx.png');"></div>
+					<div data-filter="web" style="background-image:url('img/audit.png');"></div>
+					<div data-filter="graphics" style="background-image:url('img/logo_pcafarma.png');"></div>
+					<div data-filter="web" style="background-image:url('img/farma.png');"></div>-->
+					
+					
+				<li class="mix clubs mix_all" data-rank="0" style=" display: inline-block; opacity: 1;">
+					<img style="width: 100%;" src="img/imagen2.jpg">
+				</li>
+				<li class="mix hearts mix_all" data-rank="2" style=" display: inline-block; opacity: 1;">
+					<img style="width: 100%;" src="img/admin/imagen1.png">
+				</li>
+				<li class="mix diamonds mix_all" data-rank="5" style=" display: inline-block; opacity: 1;">
+					<img style="width: 100%;" src="img/imagen4.jpg">
+				</li>
+				<li class="mix spades mix_all" data-rank="3" style=" display: inline-block; opacity: 1;">
+					<img style="width: 100%;" src="img/cliente/imagen1.png">
+				</li>
+				<li class="mix clubs mix_all" data-rank="12" style=" display: inline-block; opacity: 1;">
+					<img style="width: 100%;" src="img/imagen3.png">
+				</li>
+				
+				<li class="mix clubs mix_all" data-rank="0" style=" display: inline-block; opacity: 1;">
+					<img style="width: 100%;" src="img/foto1.jpg">
+				</li>
+				<li class="mix hearts mix_all" data-rank="2" style=" display: inline-block; opacity: 1;">
+					<img style="width: 100%;" src="img/prestador/imagen1.png">
+				</li>
+				<li class="mix diamonds mix_all" data-rank="5" style=" display: inline-block; opacity: 1;">
+					<img style="width: 100%;" src="img/logo_prx.png">
+				</li>
+				<li class="mix spades mix_all" data-rank="3" style=" display: inline-block; opacity: 1;">
+					<img style="width: 100%;" src="img/audit.png">
+				</li>
+				<li class="mix clubs mix_all" data-rank="12" style=" display: inline-block; opacity: 1;">
+					<img style="width: 100%;" src="img/logo_pcafarma.png">
+				</li>
+				<li class="mix clubs mix_all" data-rank="12" style=" display: inline-block; opacity: 1;">
+					<img style="width: 100%;" src="img/farma.png">
+				</li>
+			</ul>
+			
+
+		
+		
+			
+				<div class="row-fluid nav-filtro">
+							
+	<!--						<a data-filter="all" tabindex="-1" style="margin-left:20%">All</a> 
+							<a  data-filter="web" tabindex="-1">Web</a>
+							<a  data-filter="apps" tabindex="-1">Apps</a>
+							<a  data-filter="graphics" tabindex="-1" style="margin-right:20%">Graphics</a>-->
+
+
+					
+					
+
+					<div data-filter="graphics" style="background-image:url('img/imagen2.jpg');"></div>
+					<div data-filter="web" style=" background-image:url('img/admin/imagen1.png');"></div>
+					<div data-filter="graphics" style="background-image:url('img/imagen4.jpg');"></div>
+					<div data-filter="web" style=" background-image:url('img/cliente/imagen1.png');"></div>
+					<div data-filter="apps" style="background-image:url('img/imagen3.png');"></div>
+					<div data-filter="graphics" style="background-image:url('img/foto1.jpg');"></div>
+					<div data-filter="web" style=" background-image:url('img/prestador/imagen1.png');"></div>
+					<div data-filter="graphics" style="background-image:url('img/logo_prx.png');"></div>
+					<div data-filter="web" style="background-image:url('img/audit.png');"></div>
+					<div data-filter="graphics" style="background-image:url('img/logo_pcafarma.png');"></div>
+					<div data-filter="web" style="background-image:url('img/farma.png');"></div>
+
+				</div> 
+
+
+			
+		</div>
+	</section>
+	<!-- End of Portfolio Section -->
+
+
+	<!-- Skills Section -->
+	<section id="skills" class="cbp-so-section cbp-so-init">
+		<div class="container cbp-so-side cbp-so-side-top">
+			<h1>What my clients say</h1>
+			<div class="testimonials">
+
+				<div id="da-slider" class="da-slider">
+
+					<div class="da-slide da-slide-current">
+						<div class="da-img">
+							<div class="round-outline">
+								<img class="round-photo" src="assets/photo-small-1.png" alt="image01">
+							</div>
+						</div>
+						<p class="block-cite">Silviu Stefu, CEO Pixelglow</p>
+						<blockquote><p>This is a simple testimonial paragraph to show you what my clients said about me and my services. Feel free to navigate to left or right to read more quotes like this one.</p></blockquote>
+					</div>
+
+					<div class="da-slide">
+						<div class="da-img">
+							<div class="round-outline">
+								<img class="round-photo" src="assets/photo-small-2.png" alt="image01">
+							</div>
+						</div>
+						<p class="block-cite">James Corner, CTO at Adove Photostop</p>
+						<blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nec eleifend felis, vel venenatis tellus. Ut gravida ultrices est, vitae pharetra lectus pellentesque eget. Fusce congue justo ac neque interdum fringilla.</p></blockquote>
+					</div>
+
+					<div class="da-slide">
+						<div class="da-img">
+							<div class="round-outline">
+								<img class="round-photo" src="assets/photo-small-3.png" alt="image01">
+							</div>
+						</div>
+						<p class="block-cite">Jonathan Doe, founder www.mysite.com</p>
+						<blockquote><p>Sed malesuada, elit quis ornare euismod, leo felis interdum velit, non ullamcorper tellus felis commodo nibh. Aliquam eget commodo risus. Proin lobortis purus vitae ornare accumsan. Proin lectus lacus, fringilla non tincidunt ac, mollis vitae magna.</p></blockquote>
+					</div>
+
+					<div class="da-slide">
+						<div class="da-img">
+							<div class="round-outline">
+								<img class="round-photo" src="assets/photo-small-4.png" alt="image01">
+							</div>
+						</div>
+						<p class="block-cite">Jane James, www.example.com</p>
+						<blockquote><p>Praesent sed varius odio, ut ornare quam. Morbi porta sapien sed vestibulum varius. Sed vel consequat tortor. Pellentesque nec consequat libero, in ultrices libero. Donec eget libero molestie, iaculis nisl in, gravida purus.</p></blockquote>
+					</div>
+
+					<nav class="da-arrows">
+						<span class="da-arrows-prev"></span>
+						<span class="da-arrows-next"></span>
+					</nav>
+
+				<nav class="da-dots"><span class="da-dots-current"></span><span></span><span></span><span></span></nav></div>
+
+			</div>
+		</div>
+	</section>
+	<!-- End of Testimonials Section -->
+
+
+	<!-- Contact Section -->
+	<section id="contact" class="cbp-so-section cbp-so-init">
+		<div class="container cbp-so-side cbp-so-side-top">
+			<h1>Contact me</h1>
+			<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+			<div class="row">
+				<div class="col-sm-2 col-sm-offset-3">
+					<div class="icon">
+						<i class="fa fa-map-marker fa-2x"></i>
+					</div>
+					<p class="contact-meta">Freedom Street, 245, Amsterdam</p>
+				</div>
+				<div class="col-sm-2">
+					<div class="icon">
+						<i class="fa fa-envelope fa-2x"></i>
+					</div>
+					<p class="contact-meta">contact@mysite.com</p>
+				</div>
+				<div class="col-sm-2">
+					<div class="icon">
+						<i class="fa fa-phone fa-2x"></i>
+					</div>
+					<p class="contact-meta">255 236 2148</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3">
+					<form action="contact.php" method="post" role="form">
+						<div class="form-group">
+							<input type="text" class="form-control input-lg" id="nameinput" placeholder="Name" name="contact-name">
+						</div>
+						<div class="form-group">
+							<input type="email" class="form-control input-lg" id="emailinput" placeholder="Email" name="contact-email">
+						</div>
+						<div class="form-group">
+							<textarea class="form-control" rows="6" name="contact-message"></textarea>
+						</div>
+						<div class="form-group">
+							<button type="submit" class="btn btn-outline-white btn-big">Submit</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End of Contact Section -->
+
+	<!-- Footer -->
+	<div class="footer">
+		<div class="container">
+			<p>bñaaaaaa</p>
+		</div>
+	</div>
+
+	<div class="scrolltotop">
+		<i class="fa fa-chevron-up"></i>
+	</div>
+	<!-- End of Footer -->
+
+	
+</body>
+</html>
